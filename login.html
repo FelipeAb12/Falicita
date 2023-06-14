@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <title>Falicita - Área de Login</title>
+        <link rel="stylesheet" href="stylelogin.css">
+      </head>
+    <body>
+        <div class="borda-superior">
+            <a href="contato.html" class="botao-contato">Contato</a>
+            <a href="index.html" class="navigation">Voltar para a página inicial</a>
+          </div>
+        <div class="logo-container" id="logo-container">
+            <div class="logo" id="logo"> 
+                <img src="/Teste/Imagens/branco.png" alt="">
+                
+            </div>
+        </div>
+        <div class="login-container">
+            <Div class="user">
+            </Div>
+            <form class="login-form" id="login-form">
+                <input type="text" id="username" placeholder="Usuário"> 
+                <input type="password" id="password" placeholder="Senha"> 
+                <input type="submit" id="btnlogar" value = 'ENTRAR'>
+            </form>
+        </div>
+
+        <script src="usuarios.js"></script>
+        <script>
+            document.getElementById('login-form').addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o envio do formulário
+
+                let username = document.getElementById('username').value;
+                let password = document.getElementById('password').value;
+                let isLoggedIn = false;
+
+                for (let i = 0; i < usuarios.length; i++) {
+                    if (username === usuarios[i].login && password === usuarios[i].senha) {
+                        isLoggedIn = true;
+                        break;
+                    }
+                }
+
+                if (isLoggedIn) {
+                    localStorage.setItem('isLoggedIn', 'true'); // Armazena o status de login no armazenamento local
+                    localStorage.setItem('username', username); // Armazena o nome do usuário no armazenamento local
+                    window.location.href = 'Home.html'; // Redireciona para a página Home.html
+                } else {
+                    alert('Usuário ou senha incorretos');
+                }
+            });
+        </script>
+        <footer class="footer"></footer>
+    </body>
+</html>

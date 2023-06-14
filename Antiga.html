@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: white; /* Fundo branco */
+    }
+    header {
+        background-color: #072540;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Alinhamento dos elementos no cabeçalho */
+        color: white;
+    }
+    header h1 {
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 24px;
+    }
+    header h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 6cm;
+        height: 800px;
+        margin-top: 1cm;
+    }
+
+    .topic {
+        height: 680px;
+        width: 500px;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #5A99BA;
+        font-size: 20px;
+        color: white;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .subtopic {
+        margin-top: 20px;
+        font-size: 14px;
+        color: white;
+    }
+    .subtopic1 {
+        margin-top: 20px;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .subtopic2 {
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .welcome {
+        position: absolute;
+        top: 50px;
+        right: 40px;
+        font-size: 16px;
+        color: white;
+        
+    }
+    .logout {
+        color: white;
+        text-decoration:solid;
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .logout:hover {
+        color:#072540
+    }
+    .logout-container {
+        background-color: #5E9FC1;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    .logout-container:hover {
+        background-color: #A6FDFD;
+        
+    }
+    </style>
+</head>
+<body>
+    <script>
+        // Verifica se o usuário está logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+        // Obtém o nome do usuário logado
+        const username = localStorage.getItem('username');
+        if (username) {
+            const welcomeElement = document.createElement('div');
+            welcomeElement.textContent = `Bem Vindo, Sr(a) ${username}`;
+            welcomeElement.classList.add('welcome');
+            document.body.appendChild(welcomeElement);
+        }
+    </script>
+    <header>
+        <div>
+            <img src="/Imagens/branco.png" width="200px">
+        </div>
+        <div class="logout-container">
+            <div class="logout" onclick="logout()">Sair</div>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="topic">
+            PROCEDIMENTOS PELA LEI ANTIGA Lei Nº 8.666/1993 e Lei Nº 10.520/2002:
+                <div class="subtopic">
+                    1. Pregão Eletrônico
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        1.1 Pregão Eletrônico com registro de preço
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        1.2 Pregão Eletrônico sem registro de preço
+                    </div>
+                </div>
+                <div class="subtopic">
+                    2. Pregão Presencial
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        2.1 Pregão Presencial com registro de preço
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        2.3 Pregão Presencial sem registro de preço
+                    </div>
+                </div>
+                <div class="subtopic">
+                    3. Concorrência
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        3.1 Concorrência com registro de preço
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        3.2 Concorrência sem registro de preço
+                    </div>
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    4. Tomada de preço
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    5. Convite
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    6. Leilão
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    7. Concurso
+                </div>
+                <div class="subtopic" onclick="window.location.href = 'nome do arquivo1'">
+                    8. Contratação Direta (Obras ou Serviços de Engenharia)
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        8.1 Dispensa de Licitação
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        8.2 Inexigibilidade de Licitação
+                    </div>
+        
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    9. Contratação Direta (Obras ou Serviços de Engenharia)
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    10. Contratação Direta de Artistas
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn'); // Remove o status de login do armazenamento local
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+    </script>
+</body>
+</html>

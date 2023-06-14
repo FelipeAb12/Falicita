@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: white; /* Fundo branco */
+    }
+    header {
+        background-color: #072540;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Alinhamento dos elementos no cabeçalho */
+        color: white;
+    }
+    header h1 {
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 24px;
+    }
+    header h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 6cm;
+        height: 800px;
+        margin-top: 1cm;
+    }
+
+    .topic {
+        height: 680px;
+        width: 500px;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #5A99BA;
+        font-size: 20px;
+        color: white;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .subtopic {
+        margin-top: 20px;
+        font-size: 14px;
+        color: white;
+    }
+    .subtopic1 {
+        margin-top: 20px;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .subtopic2 {
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .welcome {
+        position: absolute;
+        top: 50px;
+        right: 40px;
+        font-size: 16px;
+        color: white;
+        
+    }
+    .logout {
+        color: white;
+        text-decoration:solid;
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .logout:hover {
+        color:#072540
+    }
+    .logout-container {
+        background-color: #5E9FC1;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    .logout-container:hover {
+        background-color: #A6FDFD;
+        
+    }
+    </style>
+</head>
+<body>
+    <script>
+        // Verifica se o usuário está logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+        // Obtém o nome do usuário logado
+        const username = localStorage.getItem('username');
+        if (username) {
+            const welcomeElement = document.createElement('div');
+            welcomeElement.textContent = `Bem Vindo, Sr(a) ${username}`;
+            welcomeElement.classList.add('welcome');
+            document.body.appendChild(welcomeElement);
+        }
+    </script>
+    <header>
+        <div>
+            <img src="/Imagens/branco.png" width="200px">
+        </div>
+        <div class="logout-container">
+            <div class="logout" onclick="logout()">Sair</div>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="topic">
+            PROCEDIMENTOS ADMINISTRATIVOS DIVERSOS:
+                <div class="subtopic">
+                    1. Prorrogação de Contrato
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        1.1 Contrato de Serviços Continuados
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        1.2 Contrato de Serviços não Continuados ou Obras
+                    </div>
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    2. Prorrogação de Ata (No caso de estados que tenham essa possibilidade)
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    3. Repactuação de Contrato
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    4. Revisão/Realinhamento
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    5. Adesão a ARP gerenciada pela Secretaria de Administração do Estado/Município
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    6. Adesão a ARP gerenciada pelo próprio órgão
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    7. Adesão a ARP gerenciada por outro ente ou poder federativo
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    8. Liberação para consumo de ARP de órgão participante
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    9. Concessão de Patrocínio
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    10. Reajuste
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    11. Acréscimos e Supressões
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    2. Pagamento Indenizatório
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                    13. Incorporação de Ata
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn'); // Remove o status de login do armazenamento local
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+    </script>
+</body>
+</html>

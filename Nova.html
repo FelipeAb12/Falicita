@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Lei</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <script>
+        // Verifica se o usuário está logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+        // Obtém o nome do usuário logado
+        const username = localStorage.getItem('username');
+        if (username) {
+            const welcomeElement = document.createElement('div');
+            welcomeElement.textContent = `Bem Vindo, Sr(a) ${username}`;
+            welcomeElement.classList.add('welcome');
+            welcomeElement.style.fontWeight = 'bold';
+            document.body.appendChild(welcomeElement);
+        }
+    </script>
+    <header>
+        <div>
+            <img src="/Imagens/branco.png" width="150px">
+        </div>
+        <div class="logout-container">
+            <div class="navigation" onclick="window.location.href = 'Home.html'">Página inicial</div>
+            <div class="logout" onclick="logout()">Sair</div>
+        </div>
+    </header>
+    <div class="topic-container">
+        <div class="topic">
+            PROCEDIMENTOS PELA LEI NOVA Lei Nº 14.133/2021:
+                <div class="subtopic">
+                       Pregão Eletrônico
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                         Pregão Eletrônico com registro de preço
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                        Pregão Eletrônico sem registro de preço
+                    </div>
+                </div>
+                <div class="subtopic">
+                       Pregão Presencial
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                         Pregão Presencial com registro de preço
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                         Pregão Presencial sem registro de preço
+                    </div>
+                </div>
+                <div class="subtopic">
+                       Concorrência
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                          Concorrência com registro de preço
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                          Concorrência sem registro de preço
+                    </div>
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                      Concurso
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                      Leilão
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                      Diálogo Competitivo
+                </div>
+                <div class="subtopic">
+                      Contratação Direta
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                          Dispensa Eletrônica de Licitação
+                    </div>
+                    <div class="subtopic2" onclick="window.location.href = 'nome do arquivo1'">
+                          Inexigibilidade de Licitação
+                    </div>
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                      Contratação Direta (Obras ou Serviços de Engenharia)
+                </div>
+                <div class="subtopic1" onclick="window.location.href = 'nome do arquivo1'">
+                      Contratação Direta de Artistas
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn'); // Remove o status de login do armazenamento local
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+    </script>
+</body>
+</html>

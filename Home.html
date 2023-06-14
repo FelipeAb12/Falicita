@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+<link rel="stylesheet" href="style.css">
+<body>
+    <script>
+        // Verifica se o usuário está logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+
+        // Obtém o nome do usuário logado
+        const username = localStorage.getItem('username');
+        if (username) {
+            const welcomeElement = document.createElement('div');
+            welcomeElement.textContent = `Bem Vindo, Sr(a) ${username}`;
+            welcomeElement.classList.add('welcome');
+            welcomeElement.style.fontWeight = 'bold';
+            document.body.appendChild(welcomeElement);
+        }
+    </script>
+    <header>
+        <div>
+            <img src="/Imagens/branco.png"width=150px>
+        </div>
+        </div>
+        <div class="logout-container">
+            <div class="logout" onclick="logout()">Sair</div>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="option" onclick="window.location.href = 'Nova.html'">
+            PROCEDIMENTOS PELA LEI NOVA:
+             Lei Nº 14.133/2021
+        </div>
+        <div class="option" onclick="window.location.href = 'Antiga.html'">
+            PROCEDIMENTOS PELA LEI ANTIGA:
+             Lei Nº 8.666/1993 e Lei Nº 10.520/2002
+        </div>
+        <div class="option" onclick="window.location.href = 'Diversos.html'">
+            PROCEDIMENTOS ADMINISTRATIVOS DIVERSOS
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn'); // Remove o status de login do armazenamento local
+            localStorage.removeItem('username'); // Remove o nome do usuário do armazenamento local
+            window.location.href = 'index.html'; // Redireciona de volta para a página de login
+        }
+    </script>
+</body>
+</html>

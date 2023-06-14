@@ -1,0 +1,189 @@
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+::-webkit-scrollbar-track {
+    background-color: #E6F0F5; /* Cor de fundo da track */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #A0CDD8; /* Cor do polegar */
+    border-radius: 4px; /* Borda arredondada do polegar */
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #81BCC9; /* Cor do polegar ao passar o mouse */
+}
+::-webkit-scrollbar-horizontal {
+    height: 8px; /* Altura da barra de rolagem na horizontal */
+}
+::-webkit-scrollbar-vertical {
+    width: 8px; /* Largura da barra de rolagem na vertical */
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(/Teste/Imagens/Backllogin.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #5E9FC1;
+}
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: right;
+    top: 0px;
+  }
+  
+  .borda-superior {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+  .botao-contato {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 300ms;
+    border-radius: 20px;
+    border: 1px solid transparent;
+  }
+  .botao-contato:hover {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid #c2c2c2;
+  }
+  .navigation {
+    color:#ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    transition: 200ms linear;
+    text-decoration: none;
+
+}
+    .navigation:hover {
+    color:#ffffff;
+    background-color: #295072;
+    border: 1px solid #C2C2C2;
+}
+  
+    .logo{
+        display: flex;
+        justify-content: center;
+        height: 190px;
+        margin-top: 5%;
+    }
+
+    .login-container {
+        position: fixed;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 500ms;
+        height: 200px;
+        padding: 20px;
+        border-radius: 5px;
+        
+    }
+    .login-form:hover {
+        background-color: #5063a0;
+        border-radius: 10px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        background-color: #ffffff;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+
+    .login-form input[type="submit"] {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-left: 10px;
+        color: #FFFFFF;
+        background-color: #04b3d2;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+    }
+    .login-form input:hover[type="submit"] {
+        background-color: #05c3e4;
+    }
+    h3 {
+        color: #fdfdfd;
+    }
+
+@media (max-width: 800px){
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url(/Teste/Imagens/Backllogin.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: #5E9FC1;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        height: 170px;
+        margin-top: 20%;
+    }
+}
+
+@media (max-width: 400px){
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url(/Teste/Imagens/Backllogin.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: #5E9FC1;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        height: 120px;
+        margin-top: 40%;
+    }
+    .borda-superior {
+        font-size: 12px;
+        
+      }
+      .login-form:hover {
+        background-color: transparent;
+        border-radius: 10px;
+        }
+}
